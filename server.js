@@ -1,6 +1,13 @@
 const express = require('express');
 
+const connectDB = require('./config/db');
+
+// Connect database
+connectDB();
+
 const app = express();
+
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.json({ msg: 'Welcome to the ContactLy API' });
